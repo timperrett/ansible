@@ -132,8 +132,9 @@ def create_launch_config(connection, module):
     volumes = module.params['volumes']
     instance_type = module.params.get('instance_type')
 
+    bdm = BlockDeviceMapping()
+
     if volumes:
-        bdm = BlockDeviceMapping()
         for volume in volumes:
             if 'device_name' not in volume:
                 module.fail_json(msg='Device name must be set for volume')
