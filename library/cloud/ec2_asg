@@ -114,7 +114,7 @@ def enforce_required_arguments(module):
         they cannot be mandatory arguments for the module, so we enforce
         them here '''
     missing_args = []
-    for arg in ('min_size', 'max_size', 'launch_config_name', 'availability_zones')
+    for arg in ('min_size', 'max_size', 'launch_config_name', 'availability_zones'):
         if module.params[arg] is None:
             missing_args.append(arg)
     if missing_args:
